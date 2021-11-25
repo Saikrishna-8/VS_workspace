@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>intro to Jquery</title>
+    <script src="jQuery1.js"></script>
+    <script>
+        function bind() {
+            $("view_text").text($("enter_text").val());
+        }
+    </script>
+</head>
+<style>
+    body {
+        color: green;
+        font-weight: bold;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-style: italic;
+    }
+</style>
+
+<body>
+
+    <label for="enter_text">Enter Text:</label>
+    <input id="enter_text" type="text" onkeyup="bind();">
+    <br />
+    <br />
+
+
+    <label for="enter_text_1">View Text:</label>
+    <label id="view_text"></label>
+
+
+</body>
+
+</html>

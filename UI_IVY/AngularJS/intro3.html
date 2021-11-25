@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app>
+
+<head>
+    <title>intro to Jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<style>
+    body {
+        color: green;
+        font-weight: bold;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-style: italic;
+    }
+</style>
+
+<body>
+    <label for="enter_text">Enter Text:</label>
+    <input id="enter_text" type="text" ng-model="m">
+    <br />
+    <br />
+    <label for="enter_text_1">View Text:</label>
+    <label id="view_text" ng-bind="m" ng-init="m='SAI KRISHNA'" ></label>
+
+
+</body>
+
+</html>
