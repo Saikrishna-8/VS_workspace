@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+</head>
+<script>
+    var timeleft = 5;
+
+    function sai() {
+        document.getElementById('startT').style.display = 'none';
+        document.getElementById('stopT').style.display = 'inline';
+
+        if (timeleft <= 0) {
+            clearInterval(downloadTimer);
+            document.getElementById("countdown").innerHTML = "Finished";
+            document.getElementById('resetT').style.display = 'inline';
+            document.getElementById('stopT').style.display = 'none';
+
+        } else {
+            document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+        }
+        timeleft -= 1;
+    }
+    var downloadTimer = null;
+
+    function stopTimer() {
+        clearInterval(downloadTimer);
+        alert(timeleft);
+        document.getElementById('resetT').style.display = 'inline';
+        document.getElementById('stopT').style.display = 'none';
+        document.getElementById('resumeT').style.display = 'inline';
+        
+    }
+    function resumeTimer() {
+        document.getElementById('resumeT').style.display = 'none';
+        document.getElementById('stopT').style.display = 'inline';
+        downloadTimer = setInterval(sai, 1000);
+    }
+    function resetTimer()
+    {
+
+        document.getElementById('resetT').style.display='none';
+        document.getElementById('startT').style.display='inline';
+        document.getElementById('stopT').style.display='none';
+        document.getElementById('resumeT').style.display='none';
+        document.getElementById('countdown').innerHTML='';
+
+        timeleft = 5;
+        //downloadTimer = setInterval(sai, 1000);
+        
+    }
+    function startTimer()
+    {
+        downloadTimer = setInterval(sai, 1000);
+    }
+</script>
+
+<body>
+
+    <div id="countdown"></div>
+    <button id="startT" onclick="startTimer();">Start</button>
+    <button style="display: none;" id="stopT" onclick="stopTimer();">Stop</button>
+    <button style="display: none;" id="resumeT" onclick="resumeTimer();">Resume</button>
+    <button style="display: none;" id="resetT" onclick="resetTimer();">Reset</button>
+
+    <h1>Timer in JS</h1>
+
+</body>
+
+</html>
